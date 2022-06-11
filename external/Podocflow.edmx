@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://my300018-api.saps4hanacloud.cn/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my300018-api.saps4hanacloud.cn/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my300018-api.saps4hanacloud.cn/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my300018-api.saps4hanacloud.cn/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my300018-api.saps4hanacloud.cn/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my300018-api.saps4hanacloud.cn/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my300018-api.saps4hanacloud.cn/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my300018-api.saps4hanacloud.cn/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my300018-api.saps4hanacloud.cn/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my300018-api.saps4hanacloud.cn/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="YY1_PURCHASORDERHISTORY_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="YY1_purchasorderhistoryType" sap:label="purchasorderhistory" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PurchaseOrder"/>
+                    <PropertyRef Name="PurchaseOrderItem"/>
+                    <PropertyRef Name="AccountAssignmentNumber"/>
+                    <PropertyRef Name="PurchasingHistoryDocumentType"/>
+                    <PropertyRef Name="PurchasingHistoryDocumentYear"/>
+                    <PropertyRef Name="PurchasingHistoryDocument"/>
+                    <PropertyRef Name="PurchasingHistoryDocumentItem"/>
+                </Key>
+                <Property Name="PurchaseOrder" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Purchasing Document" sap:quickinfo="Purchasing Document Number"/>
+                <Property Name="PurchaseOrderItem" Type="Edm.String" Nullable="false" MaxLength="5" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Item" sap:quickinfo="Item Number of Purchasing Document"/>
+                <Property Name="AccountAssignmentNumber" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Account Assgmt No." sap:quickinfo="Sequential Number of Account Assignment"/>
+                <Property Name="PurchasingHistoryDocumentType" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Trans./event type" sap:quickinfo="Transaction/event type, purchase order history"/>
+                <Property Name="PurchasingHistoryDocumentYear" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Material Doc. Year" sap:quickinfo="Material Document Year"/>
+                <Property Name="PurchasingHistoryDocument" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Material Document" sap:quickinfo="Number of Material Document"/>
+                <Property Name="PurchasingHistoryDocumentItem" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Material Doc.Item" sap:quickinfo="Item in Material Document"/>
+                <Property Name="PurchasingHistoryCategory" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="PO History Cat." sap:quickinfo="Purchase Order History Category"/>
+                <Property Name="GoodsMovementType" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Movement Type" sap:quickinfo="Movement Type (Inventory Management)"/>
+                <Property Name="PostingDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:required-in-filter="false" sap:label="Posting Date" sap:quickinfo="Posting Date in the Document"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Currency" sap:quickinfo="Currency Key" sap:semantics="currency-code"/>
+                <Property Name="DebitCreditCode" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Debit/Credit ind" sap:quickinfo="Debit/Credit Indicator"/>
+                <Property Name="IsCompletelyDelivered" Type="Edm.Boolean" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Delivery Completed" sap:quickinfo="&quot;Delivery Completed&quot; Indicator"/>
+                <Property Name="ReferenceDocumentFiscalYear" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Fisc.yr.ref.doc" sap:quickinfo="Fiscal Year of a Reference Document"/>
+                <Property Name="ReferenceDocument" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Reference Document" sap:quickinfo="Document No. of a Reference Document"/>
+                <Property Name="ReferenceDocumentItem" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Reference Doc. Item" sap:quickinfo="Item of a Reference Document"/>
+                <Property Name="Material" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Material" sap:quickinfo="Material Number"/>
+                <Property Name="Plant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Plant"/>
+                <Property Name="RvslOfGoodsReceiptIsAllowed" Type="Edm.Boolean" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="RevGR despite IR" sap:quickinfo="Reversal of GR allowed for GR-based IV despite invoice"/>
+                <Property Name="PricingDocument" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Doc. Condition No." sap:quickinfo="Number of the Document Condition"/>
+                <Property Name="TaxCode" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Tax Code" sap:quickinfo="Tax on Sales/Purchases Code"/>
+                <Property Name="DocumentDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:required-in-filter="false" sap:label="Document Date" sap:quickinfo="Document Date in Document"/>
+                <Property Name="InventoryValuationType" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Valuation Type"/>
+                <Property Name="DocumentReferenceID" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Reference" sap:quickinfo="Reference Document Number"/>
+                <Property Name="DeliveryQuantityUnit" Type="Edm.String" MaxLength="3" sap:required-in-filter="false" sap:label="Delivery Note Unit" sap:quickinfo="Unit of Measure From Delivery Note" sap:semantics="unit-of-measure"/>
+                <Property Name="ManufacturerMaterial" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Material" sap:quickinfo="Material number"/>
+                <Property Name="AccountingDocumentCreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:required-in-filter="false" sap:label="Entry Date" sap:quickinfo="Day On Which Accounting Document Was Entered"/>
+                <Property Name="Quantity" Type="Edm.Decimal" Precision="13" Scale="3" sap:required-in-filter="false" sap:unit="PurchaseOrderQuantityUnit" sap:label="Quantity"/>
+                <Property Name="PurOrdAmountInCompanyCodeCrcy" Type="Edm.Decimal" Precision="14" Scale="3" sap:required-in-filter="false" sap:unit="CompanyCodeCurrency" sap:label="Amt.in Loc.Cur." sap:quickinfo="Amount in Local Currency"/>
+                <Property Name="PurchaseOrderAmount" Type="Edm.Decimal" Precision="14" Scale="3" sap:required-in-filter="false" sap:unit="Currency" sap:label="Amount" sap:quickinfo="Amount in Document Currency"/>
+                <Property Name="QtyInPurchaseOrderPriceUnit" Type="Edm.Decimal" Precision="13" Scale="3" sap:required-in-filter="false" sap:unit="OrderPriceUnit" sap:label="Quantity in OPUn" sap:quickinfo="Quantity in purchase order price unit"/>
+                <Property Name="GRIRAcctClrgAmtInCoCodeCrcy" Type="Edm.Decimal" Precision="14" Scale="3" sap:required-in-filter="false" sap:unit="CompanyCodeCurrency" sap:label="GR/IR clr.value" sap:quickinfo="GR/IR account clearing value in local currency"/>
+                <Property Name="GdsRcptBlkdStkQtyInOrdQtyUnit" Type="Edm.Decimal" Precision="13" Scale="3" sap:required-in-filter="false" sap:unit="PurchaseOrderQuantityUnit" sap:label="GR Blck.Stock in OUn" sap:quickinfo="Goods Receipt Blocked Stock in Order Unit"/>
+                <Property Name="GdsRcptBlkdStkQtyInOrdPrcUnit" Type="Edm.Decimal" Precision="13" Scale="3" sap:required-in-filter="false" sap:unit="OrderPriceUnit" sap:label="GR blocked stck.OPUn" sap:quickinfo="Quantity in GR blocked stock in order price unit"/>
+                <Property Name="InvoiceAmtInCoCodeCrcy" Type="Edm.Decimal" Precision="14" Scale="3" sap:required-in-filter="false" sap:unit="CompanyCodeCurrency" sap:label="Invoice Value" sap:quickinfo="Invoice Value Entered (in Local Currency)"/>
+                <Property Name="ShipgInstrnSupplierCompliance" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Compliance" sap:quickinfo="Compliance with Shipping Instructions"/>
+                <Property Name="InvoiceAmountInFrgnCurrency" Type="Edm.Decimal" Precision="14" Scale="3" sap:required-in-filter="false" sap:unit="Currency" sap:label="Invoice Value in FC" sap:quickinfo="Invoice Value in Foreign Currency"/>
+                <Property Name="QuantityInDeliveryQtyUnit" Type="Edm.Decimal" Precision="13" Scale="3" sap:required-in-filter="false" sap:unit="DeliveryQuantityUnit" sap:label="Del. Note Quantity" sap:quickinfo="Quantity in Unit of Measure from Delivery Note"/>
+                <Property Name="GRIRAcctClrgAmtInTransacCrcy" Type="Edm.Decimal" Precision="14" Scale="3" sap:required-in-filter="false" sap:unit="Currency" sap:label="GR/IR clr.value" sap:quickinfo="Clearing value on GR/IR clearing account (transac. currency)"/>
+                <Property Name="QuantityInBaseUnit" Type="Edm.Decimal" Precision="13" Scale="3" sap:required-in-filter="false" sap:unit="BaseUnit" sap:label="Quantity"/>
+                <Property Name="GRIRAcctClrgAmtInOrdTrnsacCrcy" Type="Edm.Decimal" Precision="14" Scale="3" sap:required-in-filter="false" sap:unit="DocumentCurrency" sap:label="GR/IR clr.value" sap:quickinfo="Clearing Value on GR/IR Account in PO Currency"/>
+                <Property Name="InvoiceAmtInPurOrdTransacCrcy" Type="Edm.Decimal" Precision="14" Scale="3" sap:required-in-filter="false" sap:unit="DocumentCurrency" sap:label="FC invoice amount" sap:quickinfo="Invoice Amount in PO Currency"/>
+                <Property Name="VltdGdsRcptBlkdStkQtyInOrdUnit" Type="Edm.Decimal" Precision="13" Scale="3" sap:required-in-filter="false" sap:unit="PurchaseOrderQuantityUnit" sap:label="Val. GR BlStock OUn" sap:quickinfo="Valuated Goods Receipt Blocked Stock in Order Unit"/>
+                <Property Name="VltdGdsRcptBlkdQtyInOrdPrcUnit" Type="Edm.Decimal" Precision="13" Scale="3" sap:required-in-filter="false" sap:unit="OrderPriceUnit" sap:label="Val. GR BS OPUn" sap:quickinfo="Quantity in Valuated GR Blocked Stock in Order Price Unit"/>
+                <Property Name="IsToBeAcceptedAtOrigin" Type="Edm.Boolean" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Origin Acceptance" sap:quickinfo="Acceptance At Origin"/>
+                <Property Name="ExchangeRateDifferenceAmount" Type="Edm.Decimal" Precision="14" Scale="3" sap:required-in-filter="false" sap:unit="Currency" sap:label="Exch. Rate Diff. Amt" sap:quickinfo="Exchange Rate Difference Amount"/>
+                <Property Name="DocumentCurrency" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Currency" sap:quickinfo="Currency Key" sap:semantics="currency-code"/>
+                <Property Name="CompanyCodeCurrency" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Currency" sap:quickinfo="Currency Key" sap:semantics="currency-code"/>
+                <Property Name="BaseUnit" Type="Edm.String" MaxLength="3" sap:required-in-filter="false" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure"/>
+                <Property Name="PurchaseOrderQuantityUnit" Type="Edm.String" MaxLength="3" sap:required-in-filter="false" sap:label="Order Unit" sap:quickinfo="Purchase Order Unit of Measure" sap:semantics="unit-of-measure"/>
+                <Property Name="OrderPriceUnit" Type="Edm.String" MaxLength="3" sap:required-in-filter="false" sap:label="Order Price Unit" sap:quickinfo="Order Price Unit (Purchasing)" sap:semantics="unit-of-measure"/>
+            </EntityType>
+            <EntityContainer Name="YY1_PURCHASORDERHISTORY_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx pdf">
+                <EntitySet Name="YY1_purchasorderhistory" EntityType="YY1_PURCHASORDERHISTORY_CDS.YY1_purchasorderhistoryType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotations Target="YY1_PURCHASORDERHISTORY_CDS.YY1_PURCHASORDERHISTORY_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <atom:link rel="self" href="https://my300018-api.saps4hanacloud.cn/sap/opu/odata/sap/YY1_PURCHASORDERHISTORY_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://my300018-api.saps4hanacloud.cn/sap/opu/odata/sap/YY1_PURCHASORDERHISTORY_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

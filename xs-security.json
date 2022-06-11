@@ -1,0 +1,13 @@
+{
+    "xsappname": "griraction",
+    "tenant-mode": "dedicated",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.scopeforgriraction",
+            "description": "Scope required to access griraction endpoint"
+        }
+    ],
+    "authorities": [
+        "$XSAPPNAME.scopeforgriraction"
+    ]
+}

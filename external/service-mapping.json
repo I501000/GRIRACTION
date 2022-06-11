@@ -1,0 +1,7 @@
+{
+  "Podocflow": {
+    "directoryName": "yy-1-purchasorderhistory-cds-service",
+    "servicePath": "/sap/opu/odata/sap/YY1_PURCHASORDERHISTORY_CDS",
+    "npmPackageName": "yy-1-purchasorderhistory-cds-service"
+  }
+}

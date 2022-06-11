@@ -1,0 +1,10 @@
+applications:
+- name: griraction
+  disk_quota: 512M
+  instances: 1
+  memory: 128M
+  routes:
+  - route: griraction.cfapps.eu10.hana.ondemand.com
+  services: 
+  - griractionuaa
+  - griractiondest
